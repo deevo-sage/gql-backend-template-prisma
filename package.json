@@ -1,0 +1,44 @@
+{
+  "name": "gql-base-prisma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/deevo-sage/gql-base-prisma",
+  "author": "sidharth sahni <sidharthsahniii@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "studio": "prisma studio",
+    "dev": "nodemon src/server.ts",
+    "web": "tsc && node dist/src/server.js",
+    "gen": "prisma generate && prisma db push && npx graphql-codegen"
+  },
+  "dependencies": {
+    "@graphql-codegen/cli": "^2.2.2",
+    "@graphql-codegen/typescript": "^2.3.1",
+    "@graphql-codegen/typescript-resolvers": "^2.4.0",
+    "@graphql-tools/load-files": "^6.5.1",
+    "@graphql-tools/merge": "^8.1.2",
+    "@graphql-tools/schema": "^8.2.0",
+    "@graphql-tools/utils": "^8.3.0",
+    "@prisma/client": "^3.9.1",
+    "apollo-server-core": "^3.4.0",
+    "apollo-server-express": "^3.4.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^10.0.0",
+    "graphql": "^15.6.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.5",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.5.1",
+    "prisma": "^3.9.1",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}

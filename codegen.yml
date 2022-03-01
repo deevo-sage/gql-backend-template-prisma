@@ -1,0 +1,7 @@
+schema: ./src/typeDefs/schema.graphql
+overwrite: true
+generates:
+  ./src/types/gen-types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers

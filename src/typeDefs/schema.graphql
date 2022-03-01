@@ -1,0 +1,18 @@
+directive @authorization(role: Role = USER) on FIELD_DEFINITION
+directive @authentication on FIELD_DEFINITION
+directive @toCase(to: Int!, key: String!) on FIELD_DEFINITION
+
+enum Role {
+  USER
+  ADMIN
+}
+
+type User {
+  id: String
+  email: String
+  name: String
+  picture: String
+}
+type Query {
+  user: User
+}
