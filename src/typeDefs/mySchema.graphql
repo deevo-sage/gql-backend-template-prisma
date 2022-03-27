@@ -1,0 +1,7 @@
+# directive @authorization(role: Role = USER) on FIELD_DEFINITION
+# directive @authentication on FIELD_DEFINITION
+# Categories of clothes
+
+type Query {
+    user: User
+}

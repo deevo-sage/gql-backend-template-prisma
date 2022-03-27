@@ -5,13 +5,18 @@ datasource db {
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = []
+  provider = "prisma-client-js"
+}
+
+generator graphql {
+  provider   = "graphql-schema-generator"
+  createCRUD = "false"
+  output     = "./src/typeDefs"
 }
 
 model User {
-  id     String @id @unique @default(uuid())
-  email  String @unique
-  name   String
-  avatar String
+  id     String  @id @unique @default(uuid())
+  email  String  @unique
+  name   String?
+  avatar String?
 }

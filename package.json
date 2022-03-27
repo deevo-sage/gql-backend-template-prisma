@@ -6,16 +6,14 @@
   "author": "sidharth sahni <sidharthsahniii@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "yarn typesGen &&tsc &&node util/copy.js &&node dist/server.js ",
     "studio": "prisma studio",
     "dev": "nodemon src/server.ts",
-    "web": "tsc && node dist/src/server.js",
-    "gen": "prisma generate && prisma db push && npx graphql-codegen"
+    "web": "yarn typesGen &&tsc &&node util/copy.js &&node dist/server.js ",
+    "typesGen": "prisma generate &&  graphql-codegen ",
+    "gen": "prisma generate && graphql-codegen && prisma db push "
   },
   "dependencies": {
-    "@graphql-codegen/cli": "^2.2.2",
-    "@graphql-codegen/typescript": "^2.3.1",
-    "@graphql-codegen/typescript-resolvers": "^2.4.0",
     "@graphql-tools/load-files": "^6.5.1",
     "@graphql-tools/merge": "^8.1.2",
     "@graphql-tools/schema": "^8.2.0",
@@ -31,12 +29,20 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.2.2",
+    "@graphql-codegen/typescript": "^2.3.1",
+    "@graphql-codegen/typescript-resolvers": "^2.4.0",
+    "@prisma-korea/graphql-schema-generator": "^0.3.0",
+    "@faker-js/faker": "^6.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.5",
     "nodemon": "^2.0.13",
     "prettier": "^2.5.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "prisma": "^3.9.1",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"

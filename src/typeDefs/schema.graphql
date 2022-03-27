@@ -3,16 +3,16 @@ directive @authentication on FIELD_DEFINITION
 directive @toCase(to: Int!, key: String!) on FIELD_DEFINITION
 
 enum Role {
-  USER
-  ADMIN
+    USER
+    ADMIN
 }
 
 type User {
-  id: String
-  email: String
-  name: String
-  picture: String
+    id: String
+    email: String
+    name: String
+    picture: String
 }
 type Query {
-  user: User
+    user: User
 }
